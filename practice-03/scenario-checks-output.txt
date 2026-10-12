@@ -1,0 +1,34 @@
+1. Название длиной 100 символов: сохранены все 100, дочерней HTML-разметки нет. PASS
+2. После пяти переключений фильтров и десяти переключений id=4 исходная сводка 4/2/2/50.0%; одно нажатие меняет один статус. PASS
+3. Единственная задача id=4: после выполнения в pending нет совпадений при total=1; после удаления total=0 и сообщение о пустом списке. PASS
+4. Экспортированный variantTasks после действий содержит прежние 6 задач, id=23 выполнена, id=37 присутствует. PASS
+Tab: с начала страницы 4 ссылки, 3 фильтра, затем кнопка статуса id=1. Enter снял выполнение; фокус сохранился. Space вернул выполнение. Tab перевёл фокус на удаление; Enter удалил id=1, фокус перешёл на фильтр all. PASS
+{"id":"777","message":"Задача не найдена","recovered":true}
+{"id":"4abc","message":"Некорректный идентификатор задачи.","recovered":true}
+
+Эксперименты:
+Отсутствующий элемент: null
+Пустая коллекция: 0
+dataset.taskId: 23 string
+Числовой id: 23
+Исходная длина NodeList: 1
+Старый NodeList: 1
+Новый querySelectorAll: 2
+Старый NodeList: 1
+Новый querySelectorAll: 3
+1. phase=1; target=lab-label; currentTarget=lab-card
+2. phase=3; target=lab-label; currentTarget=lab-button
+3. phase=3; target=lab-label; currentTarget=lab-card
+Отсутствующий элемент: null
+Пустая коллекция: 0
+dataset.taskId: 23 string
+Числовой id: 23
+Исходная длина NodeList: 1
+1. phase=1; target=lab-label; currentTarget=lab-card
+2. phase=3; target=lab-label; currentTarget=lab-button
+3. phase=3; target=lab-label; currentTarget=lab-card
+
+Точки останова:
+{"line":49,"phase":"before Number","target":"SPAN","currentTarget":"task-list","raw":"4","rawType":"string","action":"toggle"}
+{"line":71,"phase":"after service","id":4,"idType":"number","action":"toggle","oldCompleted":false,"resultOk":true,"newCompleted":true,"newArray":true}
+{"line":26,"phase":"lab handler","target":"lab-label","currentTarget":"lab-button","eventPhase":3}
