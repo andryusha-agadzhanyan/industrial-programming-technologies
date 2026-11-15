@@ -11,12 +11,12 @@ import {
 } from "./task-service.js";
 
 function printStats(tasks) {
-  const stats = getTaskStats(tasks);
-  console.log(`Всего: ${stats.total}; выполнено: ${stats.completed}; осталось: ${stats.pending}`);
-  if (stats.total === 0) {
+  const { total, completed, pending, progress } = getTaskStats(tasks);
+  console.log(`Всего: ${total}; выполнено: ${completed}; осталось: ${pending}`);
+  if (total === 0) {
     console.log("Задач пока нет");
   } else {
-    console.log(`Прогресс: ${stats.progress.toFixed(1)}%`);
+    console.log(`Прогресс: ${progress.toFixed(1)}%`);
   }
 }
 
